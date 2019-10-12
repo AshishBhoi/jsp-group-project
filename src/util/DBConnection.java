@@ -5,10 +5,11 @@ import java.sql.DriverManager;
 
 public class DBConnection {
     public static Connection createConnection() {
+        DBDetails dbDetails = new DBDetails();
         Connection con = null;
-        String url = "jdbc:postgresql://localhost:5432/group1"; //PostgreSql URL and followed by the database name
-        String username = "ashish"; //PostgreSql username
-        String password = "12345678"; //PostgreSql password
+        String url = "jdbc:postgresql://tomcat.ashishbhoi.com:5432/group1"; //PostgreSql URL and followed by the database name
+        String username = dbDetails.getUsername(); //PostgreSql username
+        String password = dbDetails.getPassword(); //PostgreSql password
 
         try {
             try {

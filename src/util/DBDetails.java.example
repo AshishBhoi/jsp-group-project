@@ -1,0 +1,21 @@
+package util;
+
+class DBDetails {
+    private String username;
+    private String password;
+
+
+    DBDetails() {
+        this.username = "username"; //Your PostgreSql Username
+        this.password = "password"; //Your PostgreSql Password
+    }
+
+    String getUsername() {
+        return this.username;
+    }
+
+    String getPassword() {
+        return this.password;
+    }
+
+}
