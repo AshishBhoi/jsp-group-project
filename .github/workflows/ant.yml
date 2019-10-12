@@ -23,3 +23,8 @@ jobs:
       run: mv DBDetails.java src/util/
     - name: Build .war with Ant
       run: ant war
+    - name: Save WAR File
+      uses: actions/upload-artifact@v1
+      with:
+          name: MyWebApplication.war
+          path: dist/MyWebApplication.war
