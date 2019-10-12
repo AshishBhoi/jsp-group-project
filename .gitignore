@@ -14,3 +14,5 @@
 .cxx
 /out
 /src/util/DBDetails.java
+/__artifacts_temp
+/dist
