@@ -13,7 +13,12 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: '13.x'
-    - run: /usr/bin/curl --header "Authorization: token ${{ secrets.TOKEN }}" --header "Accept: application/vnd.github.v3.raw" --remote-name src/util/DBDetails.java --location https://api.github.com/repos/AshishBhoi/private/contents/DBDetails.java
-    - run: cp DBDetails.java src/util
+    - name: Get Database Details
+      run: |
+        /usr/bin/curl --header "Authorization: token ${{ secrets.TOKEN }}" \
+        --header "Accept: application/vnd.github.v3.raw" \
+         --remote-name \
+          --location https://api.github.com/repos/AshishBhoi/private/contents/DBDetails.java 
+          && cp DBDetails.java src/util
     - name: Build .war with Ant
       run: ant war
