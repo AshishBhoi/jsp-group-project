@@ -7,7 +7,7 @@ public class DBConnection {
     public static Connection createConnection() {
         DBDetails dbDetails = new DBDetails();
         Connection con = null;
-        String url = "jdbc:postgresql://tomcat.ashishbhoi.com:5432/group1"; //PostgreSql URL and followed by the database name
+        String url = dbDetails.getUrl(); //PostgreSql URL and followed by the database name
         String username = dbDetails.getUsername(); //PostgreSql username
         String password = dbDetails.getPassword(); //PostgreSql password
 

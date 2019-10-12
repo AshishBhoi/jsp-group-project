@@ -1,13 +1,18 @@
 package util;
 
 class DBDetails {
+    private String url;
     private String username;
     private String password;
 
-
     DBDetails() {
+        this.url = "jdbc:postgresql://localhost:5432/database"; // your jdbc url for connection Host = localhost, Port = 5432, Database = database
         this.username = "username"; //Your PostgreSql Username
         this.password = "password"; //Your PostgreSql Password
+    }
+
+    String getUrl() {
+        return this.url;
     }
 
     String getUsername() {
