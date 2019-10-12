@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Website Host archive">
+    <output-path>$PROJECT_DIR$/out/artifacts/Website_Host_archive</output-path>
+    <root id="archive" name="Website Host archive.war">
+      <element id="artifact" artifact-name="Website Host" />
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/WebContent/META-MF/META-INF/MANIFEST.MF" />
+      </element>
+    </root>
+  </artifact>
+</component>
