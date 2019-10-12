@@ -18,7 +18,8 @@ jobs:
         /usr/bin/curl --header "Authorization: token ${{ secrets.TOKEN }}" \
         --header "Accept: application/vnd.github.v3.raw" \
          --remote-name \
-          --location https://api.github.com/repos/AshishBhoi/private/contents/DBDetails.java 
-          && cp DBDetails.java src/util
+          --location https://api.github.com/repos/AshishBhoi/private/contents/DBDetails.java
+    - name: Move Everything to Correct Places
+      run: mv DBDetails.java src/util/
     - name: Build .war with Ant
       run: ant war
