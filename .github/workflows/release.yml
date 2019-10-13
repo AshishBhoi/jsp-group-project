@@ -5,7 +5,7 @@ on:
     - '*'
 
 jobs:
-  job_1:
+  jobs_1:
     name: JAVA 13
     runs-on: ubuntu-latest
 
@@ -111,10 +111,10 @@ jobs:
           path: dist/MyWebApplication-1.8.war
   jobs_5:
     name: Create Release
+    needs: [jobs_1, jobs_2, jobs_3, jobs_4]
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@master
       - uses: actions/download-artifact@master
         with:
           name: MyWebApplication-13
