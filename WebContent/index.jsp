@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <!-- Required meta tags -->
     <meta name="mobile-web-app-capable" content="yes">
@@ -7,6 +8,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="ASHISH KUMAR BHOI, SRISHTI SRIVASTAVA, ROHAN SHROTHRIUM">
+    <meta name="description" content="Course Management System for IIT Dharwad together with online survey on past courses.">
     <!-- Title -->
     <title>Group Project (G12)</title>
     <!-- Style Sheet -->
