@@ -127,8 +127,9 @@ jobs:
       - uses: actions/download-artifact@master
         with:
           name: MyWebApplication-1.8
-      - name: Create a APK
+      - run: ls -l
+      - name: Create Release
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "MyWebApplication-13 MyWebApplication-12 MyWebApplication-11 MyWebApplication-1.8"
+          artifacts: "MyWebApplication-13/MyWebApplication-13.war,MyWebApplication-12/MyWebApplication-12.war,MyWebApplication-11/MyWebApplication-11.war,MyWebApplication-1.8/MyWebApplication-1.8.war"
           token: ${{ secrets.TOKEN }}
