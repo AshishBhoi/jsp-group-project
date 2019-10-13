@@ -26,8 +26,8 @@ jobs:
     - name: Save WAR File
       uses: actions/upload-artifact@v1
       with:
-          name: MyWebApplication-13
-          path: dist/MyWebApplication.war
+          name: GroupProject-1-13
+          path: dist/GroupProject-1.war
   jobs_2:
     name: JAVA 12
     runs-on: ubuntu-latest
@@ -51,8 +51,8 @@ jobs:
     - name: Save WAR File
       uses: actions/upload-artifact@v1
       with:
-          name: MyWebApplication-12
-          path: dist/MyWebApplication.war
+          name: GroupProject-1-12
+          path: dist/GroupProject-1.war
   jobs_3:
     name: JAVA 11
     runs-on: ubuntu-latest
@@ -76,8 +76,8 @@ jobs:
     - name: Save WAR File
       uses: actions/upload-artifact@v1
       with:
-          name: MyWebApplication-11
-          path: dist/MyWebApplication.war
+          name: GroupProject-1-11
+          path: dist/GroupProject-1.war
   jobs_4:
     name: JAVA 1.8
     runs-on: ubuntu-latest
@@ -101,5 +101,5 @@ jobs:
     - name: Save WAR File
       uses: actions/upload-artifact@v1
       with:
-          name: MyWebApplication-1.8
-          path: dist/MyWebApplication.war
+          name: GroupProject-1-1.8
+          path: dist/GroupProject-1.war
