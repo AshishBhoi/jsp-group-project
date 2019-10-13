@@ -1,0 +1,134 @@
+name: Release Tags
+on: 
+  push:
+    tags:
+    - '*'
+
+jobs:
+  job_1:
+    name: JAVA 13
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up JDK 13.x
+      uses: actions/setup-java@v1
+      with:
+        java-version: '13.x'
+    - name: Get Database Details
+      run: |
+        /usr/bin/curl --header "Authorization: token ${{ secrets.TOKEN }}" \
+        --header "Accept: application/vnd.github.v3.raw" \
+         --remote-name \
+          --location https://api.github.com/repos/AshishBhoi/private/contents/DBDetails.java
+    - name: Move Everything to Correct Places
+      run: mv DBDetails.java src/util/
+    - name: Build .war with Ant
+      run: ant
+    - run: mv dist/MyWebApplication.war dist/MyWebApplication-13.war
+    - name: Save WAR File
+      uses: actions/upload-artifact@v1
+      with:
+          name: MyWebApplication-13
+          path: dist/MyWebApplication-13.war
+  jobs_2:
+    name: JAVA 12
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up JDK 12.x
+      uses: actions/setup-java@v1
+      with:
+        java-version: '12.x'
+    - name: Get Database Details
+      run: |
+        /usr/bin/curl --header "Authorization: token ${{ secrets.TOKEN }}" \
+        --header "Accept: application/vnd.github.v3.raw" \
+         --remote-name \
+          --location https://api.github.com/repos/AshishBhoi/private/contents/DBDetails.java
+    - name: Move Everything to Correct Places
+      run: mv DBDetails.java src/util/
+    - name: Build .war with Ant
+      run: ant
+    - run: mv dist/MyWebApplication.war dist/MyWebApplication-12.war
+    - name: Save WAR File
+      uses: actions/upload-artifact@v1
+      with:
+          name: MyWebApplication-12
+          path: dist/MyWebApplication-12.war
+  jobs_3:
+    name: JAVA 11
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up JDK 11.x
+      uses: actions/setup-java@v1
+      with:
+        java-version: '11.x'
+    - name: Get Database Details
+      run: |
+        /usr/bin/curl --header "Authorization: token ${{ secrets.TOKEN }}" \
+        --header "Accept: application/vnd.github.v3.raw" \
+         --remote-name \
+          --location https://api.github.com/repos/AshishBhoi/private/contents/DBDetails.java
+    - name: Move Everything to Correct Places
+      run: mv DBDetails.java src/util/
+    - name: Build .war with Ant
+      run: ant
+    - run: mv dist/MyWebApplication.war dist/MyWebApplication-11.war
+    - name: Save WAR File
+      uses: actions/upload-artifact@v1
+      with:
+          name: MyWebApplication-11
+          path: dist/MyWebApplication-11.war
+  jobs_4:
+    name: JAVA 1.8
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up JDK 1.8
+      uses: actions/setup-java@v1
+      with:
+        java-version: 1.8
+    - name: Get Database Details
+      run: |
+        /usr/bin/curl --header "Authorization: token ${{ secrets.TOKEN }}" \
+        --header "Accept: application/vnd.github.v3.raw" \
+         --remote-name \
+          --location https://api.github.com/repos/AshishBhoi/private/contents/DBDetails.java
+    - name: Move Everything to Correct Places
+      run: mv DBDetails.java src/util/
+    - name: Build .war with Ant
+      run: ant
+    - run: mv dist/MyWebApplication.war dist/MyWebApplication-1.8.war
+    - name: Save WAR File
+      uses: actions/upload-artifact@v1
+      with:
+          name: MyWebApplication-1.8
+          path: dist/MyWebApplication-1.8.war
+  jobs_5:
+    name: Create Release
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/download-artifact@master
+        with:
+          name: MyWebApplication-13
+      - uses: actions/download-artifact@master
+        with:
+          name: MyWebApplication-12
+      - uses: actions/download-artifact@master
+        with:
+          name: MyWebApplication-11
+      - uses: actions/download-artifact@master
+        with:
+          name: MyWebApplication-1.8
+      - name: Create a APK
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "MyWebApplication-13 MyWebApplication-12 MyWebApplication-11 MyWebApplication-1.8"
+          token: ${{ secrets.TOKEN }}
