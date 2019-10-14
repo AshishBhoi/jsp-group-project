@@ -1,0 +1,21 @@
+{
+  "short_name": "G-12",
+  "name": "Group Project Data Base Information System Lab",
+  "icons": [
+    {
+      "src": "./img/favicon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "./img/favicon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "orientation": "portrait",
+  "start_url": "/GroupProject-1/",
+  "background_color": "#696969",
+  "display": "standalone",
+  "theme_color": "#696969"
+}
