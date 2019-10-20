@@ -1,11 +1,11 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="GroupProject">
-    <output-path>$PROJECT_DIR$/out/artifacts/GroupProject</output-path>
+  <artifact type="exploded-war" name="jsp-group-project">
+    <output-path>$PROJECT_DIR$/out/artifacts/jsp_group_project</output-path>
     <root id="root">
-      <element id="javaee-facet-resources" facet="GroupProject-1/web/WebContent" />
+      <element id="javaee-facet-resources" facet="jsp-group-project/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="GroupProject-1" />
+          <element id="javaee-facet-classes" facet="jsp-group-project/web/Web" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="postgresql-42.2.8" />
